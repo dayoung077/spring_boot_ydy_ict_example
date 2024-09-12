@@ -6,7 +6,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import edu.ict.ex.service.DeptService;
 import edu.ict.ex.service.EmpService;
 
 @Controller
@@ -18,8 +17,10 @@ public class EmpController {
 
 	@GetMapping("/list")
 	public String list(Model model) {
-		System.out.println("emp()..");
+		System.out.println("list()..");
+		
 		model.addAttribute("empList", empService.getList());
+		
 		return "emp/list";
 	}
 

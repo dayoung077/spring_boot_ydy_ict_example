@@ -10,15 +10,9 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import edu.ict.ex.vo.DeptVO;
 import edu.ict.ex.vo.EmpVO;
 
-// DeptRepository
-
-// @Bean = @Component
-//  @Bean + Dao의 의미
-
-@Repository 
+@Repository
 public class EmpDao {
 
 	public List<EmpVO> empSelect() {
@@ -38,7 +32,7 @@ public class EmpDao {
 
 		try {
 			Class.forName(driver);
-			
+
 			connetion = DriverManager.getConnection(url, uid, upw);
 
 			statement = connetion.createStatement();
@@ -54,18 +48,17 @@ public class EmpDao {
 				int comm = rs.getInt("comm");
 				int deptno = rs.getInt("deptno");
 
-		
 				EmpVO vo = new EmpVO(empno, ename, job, mgr, hiredate, sal, comm, deptno);
 
 				vos.add(vo);
 			}
 
-		} 
-		
+		}
+
 		catch (Exception e) {
 			e.printStackTrace();
-		} 
-		
+		}
+
 		finally {
 
 			try {

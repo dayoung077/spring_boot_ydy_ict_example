@@ -10,6 +10,7 @@
 
 <body>
 <h1>dept 리스트</h1>
+
 <c:forEach var="dept" items="${deptList}">
 부서번호 : ${dept.deptno} <br>
 부서이름 : ${dept.dname} <br>

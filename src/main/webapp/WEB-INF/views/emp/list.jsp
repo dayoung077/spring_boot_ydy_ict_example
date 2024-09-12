@@ -10,16 +10,32 @@
 
 <body>
 <h1>emp 리스트</h1>
-<c:forEach var="emp" items="${empList}">
-사원번호 : ${emp.empno} 
-사원이름 : ${emp.ename} 
-직업 : ${emp.job} 
-매니저 : ${emp.mgr} 
-입사일자 : ${emp.hiredate} 
-급여 : ${emp.sal} 
-보너스 : ${emp.comm} 
-부서번호 : ${emp.deptno} <br>
-</c:forEach>
+
+<table width="50%" border="1"> 
+   <tr>  <!-- 테이블의 상단에 들어갈 컬럼명들 -->
+      <th>empno</th>
+      <th>ename</th>
+      <th>job</th>
+      <th>mgr</th>
+      <th>hiredate</th>
+      <th>sal</th>
+      <th>comm</th>
+      <th>deptno</th>
+   </tr>
+   <c:forEach var="emp" items="${empList}">
+      <tr>
+         <td>${emp.empno}</td>
+         <td>${emp.ename}</td>
+         <td>${emp.job}</td>
+         <td>${emp.mgr}</td>
+         <td>${emp.hiredate}</td>
+         <td><fmt:formatNumber value="${emp.sal}" type="number"/></td>
+                <!-- 숫자 1000을 1,000으로 표시하는 태그 -->
+         <td>${emp.comm}</td>
+         <td>${emp.deptno}</td>
+      </tr>
+   </c:forEach>
+</table>
 
 </body>
 </html>
