@@ -1,23 +1,28 @@
 package edu.ict.ex.repository;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.sql.DataSource;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import edu.ict.ex.vo.DeptVO;
 
 // DeptRepository
 
-// @Bean = @Component
-//  @Bean + Dao의 의미
+// @Bean = @Component 
+// @Bean + Dao의 의미 
 
-@Repository 
+@Repository
 public class DeptDao {
+
+	@Autowired
+	private DataSource dataSource;
 
 	public List<DeptVO> deptSelect() {
 
@@ -27,17 +32,11 @@ public class DeptDao {
 		Statement statement = null;
 		ResultSet rs = null;
 
-		String driver = "oracle.jdbc.driver.OracleDriver";
-		String url = "jdbc:oracle:thin:@localhost:1521:xe";
-		String uid = "scott";
-		String upw = "tiger";
-
 		String sql = "select * from dept";
 
 		try {
-			Class.forName(driver);
-			
-			connetion = DriverManager.getConnection(url, uid, upw);
+
+			connetion = dataSource.getConnection();
 
 			statement = connetion.createStatement();
 			rs = statement.executeQuery(sql);
@@ -52,12 +51,12 @@ public class DeptDao {
 				vos.add(vo);
 			}
 
-		} 
-		
+		}
+
 		catch (Exception e) {
 			e.printStackTrace();
-		} 
-		
+		}
+
 		finally {
 
 			try {
@@ -69,13 +68,14 @@ public class DeptDao {
 
 				if (connetion != null)
 					connetion.close();
-			} catch (Exception e) {
+			} 
+			
+			catch (Exception e) {
 			}
 
 		}
 
 		return vos;
-
 	}
 
 }
