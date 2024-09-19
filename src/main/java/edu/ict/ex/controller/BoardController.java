@@ -90,11 +90,13 @@ public class BoardController {
 		return "redirect:/board/list2";
 	}
 
+	// Criteria criteria = new Criteria();
 	@GetMapping("/list2")
 	public String list2(Criteria criteria, Model model) {
 		log.info("list2()..");
 
 		model.addAttribute("boards", boardService.getListWithPaging(criteria));
+		
 		int total = boardService.getTotal();
 		model.addAttribute("pageMaker", new PageVO(criteria, total));
 

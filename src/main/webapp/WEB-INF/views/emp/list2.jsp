@@ -8,6 +8,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+
 <body>
    <h1>emp 리스트</h1>
    <table width="50%" border="1">
@@ -38,7 +39,20 @@
 
          </tr>
       </c:forEach>
-
    </table>
+   
+      <c:if test="${pageMaker.prev}">
+      <a href="list2${pageMaker.makeQuery(pageMaker.startPage - 1) }"> << </a>
+   </c:if>
+   
+   <c:forEach var="idx" begin="${pageMaker.startPage}" end="${pageMaker.endPage}" >
+      <a href="list2${pageMaker.makeQuery(idx)}">${idx}</a>
+   </c:forEach>
+   
+   <c:if test="${pageMaker.next && pageMaker.endPage > 0}">
+      <a href="list2${pageMaker.makeQuery(pageMaker.endPage + 1) }"> >> </a>
+   </c:if>
+   
+   
 </body>
 </html>

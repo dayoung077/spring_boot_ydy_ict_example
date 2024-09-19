@@ -28,7 +28,7 @@ public interface BoardMapper {
    public void updateShape(BoardVO boardVO);
    public void insertReply(BoardVO boardVO);
    
-   // 페이징 관현
+   // 페이지 관현
    int getTotalCount();
    List<BoardVO> getListWithPaging(Criteria cri);
 }

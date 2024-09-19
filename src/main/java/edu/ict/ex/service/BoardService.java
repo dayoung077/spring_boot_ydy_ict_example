@@ -41,7 +41,6 @@ public interface BoardService {
    void writeReply(BoardVO board);
    int upHit(BoardVO board);
    
-   //페이징
       //페이징처리함수
        int getTotal();
        List<BoardVO> getListWithPaging(Criteria cri);
