@@ -32,6 +32,18 @@ public class EmpController {
 
 		return "emp/list";
 	}
+	
+	@GetMapping("/list2")
+	public String list2(Criteria criteria, Model model) {
+		System.out.println();
+
+		model.addAttribute("empList", empService.getListWithPaging(criteria));
+
+		int total = empService.getTotal();
+		model.addAttribute("pageMaker", new PageVO(criteria, total));
+
+		return "emp/list2";
+	}
 
 	@GetMapping("/list6")
 	public String list6(Model model) {
@@ -63,18 +75,6 @@ public class EmpController {
 		empService.insert(empVO);
 
 		return "redirect:/emp/list";
-	}
-
-	@GetMapping("/list2")
-	public String list2(Criteria criteria, Model model) {
-		System.out.println();
-
-		model.addAttribute("empList", empService.getListWithPaging(criteria));
-
-		int total = empService.getTotal();
-		model.addAttribute("pageMaker", new PageVO(criteria, total));
-
-		return "emp/list2";
 	}
 
 }
