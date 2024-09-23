@@ -1,7 +1,7 @@
 package edu.ict.ex.vo.join;
 
 import edu.ict.ex.vo.EmpVO;
-import edu.ict.ex.vo.SalgradeVO;
+import edu.ict.ex.vo.SalGradeVO;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,7 +13,9 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class EmpSalgradeVO {
+public class EmpSalGradeVO {
+
 	private EmpVO emp;
-	private SalgradeVO salgrade;
+	   private SalGradeVO salgrade;
+
 }

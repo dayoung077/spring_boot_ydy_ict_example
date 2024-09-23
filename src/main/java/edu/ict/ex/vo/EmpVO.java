@@ -14,13 +14,19 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString
 public class EmpVO {
-	// 변수와 변수 각각의 네이터 타입 표시
-	   private int empno; // NOT NULL NUMBER(4)    
-	   private String ename; // VARCHAR2(10)
-	   private String job; // VARCHAR2(9) 
-	   private int mgr; // NUMBER(4)
-	   private Date hiredate; // TIMESTAMP
-	   private int sal; // NUMBER(7,2) 
-	   private int comm; // NUMBER(7,2) 
-	   private int deptno; // NUMBER(2)
+	private int empno;
+	private String ename;
+	private String job;
+	private int mgr;
+	private Date hiredate; //=TimeStamp hiredate(더 디테일함)
+	private int sal;
+	private int comm;
+	private int deptno;
+	
+	//날짜 input 입력을 위해서
+	//private String hiredate2;	
+	
+	//private String dname; //부서이름
+	//private String loc; //지역
+	
 }
