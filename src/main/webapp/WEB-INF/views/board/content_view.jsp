@@ -1,17 +1,14 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>게시판 리스트</title>
 </head>
-
 <body>
-<h1>목록 보기</h1>
-
-   <table width="500" border="1">
+   <h1>글보기</h1>
+     <table width="500" border="1">
       <form action="${pageContext.request.contextPath}/board/modify" method="post">
           <input type="hidden" name="bid" value="${content_view.bid}">
           <tr>
@@ -45,5 +42,7 @@
       </form>
    </table>
 
+   
+   
 </body>
 </html>

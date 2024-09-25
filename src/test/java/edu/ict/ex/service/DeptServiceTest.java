@@ -8,14 +8,15 @@ import edu.ict.ex.vo.DeptVO;
 
 @SpringBootTest
 class DeptServiceTest {
-
-	@Autowired
-	private DeptService service;
-	@Test
-	void testService() {
-		for (DeptVO vo: service.getList()) {
-			System.out.println(vo);
-		}
-	}
+   
+   @Autowired
+   private DeptService service;
+   
+   @Test
+   void testGetList() {
+      for (DeptVO vo : service.getList()) {
+         System.out.println(vo);
+      }
+   }
 
 }

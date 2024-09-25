@@ -7,15 +7,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class PathController {
 
-	// http://localhost:8282/path/images/404/404.png
-	@GetMapping("/path")
-	public String shop(Model model) {
-		return "path/path";
-	}
-
-	// http://localhost:8282/images/404/404.png
-	@GetMapping("/path/img")
-	public String pathImg(Model model) {
-		return "path/path";
-	}
+   @GetMapping("/path")
+   public String shop(Model model) {
+      
+      return "path/path";
+   }
+   
+   @GetMapping("/path/img")
+   public String pathImg(Model model) {
+      
+      return "path/path";
+   }
 }

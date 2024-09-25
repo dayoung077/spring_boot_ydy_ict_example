@@ -32,7 +32,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @RestController
 @RequestMapping("/boards")
-public class RestBoardController {
+public class RestEmpController {
 
    @Autowired
    private BoardService boardService;

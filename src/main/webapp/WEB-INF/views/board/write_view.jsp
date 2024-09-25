@@ -7,10 +7,9 @@
 <title>게시판 리스트</title>
 </head>
 <body>
-   <h1>글 작성</h1>
-   
-  <table width="500" border="1">
-      <form action="${pageContext.request.contextPath}/board/write" method="post">
+   <h1>글작성</h1>
+   <table width="500" border="1">
+      <form action="${pageContext.request.contextPath}/board/join" method="post">
          <tr>
             <td>이름</td>
             <td><input type="text" name="bname" size="50"></td>      
@@ -30,5 +29,7 @@
       </form>
    </table>
 
+   
+   
 </body>
 </html>

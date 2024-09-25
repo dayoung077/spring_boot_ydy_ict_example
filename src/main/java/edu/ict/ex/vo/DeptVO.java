@@ -12,8 +12,8 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString
 public class DeptVO {
-	private int deptno;
-	private String dname;
-	private String loc;
+   private int deptno;
+   private String dname;
+   private String loc;
 
 }

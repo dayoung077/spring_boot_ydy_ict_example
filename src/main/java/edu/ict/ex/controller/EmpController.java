@@ -11,6 +11,7 @@ import edu.ict.ex.page.Criteria;
 import edu.ict.ex.page.PageVO;
 import edu.ict.ex.service.DeptService;
 import edu.ict.ex.service.EmpService;
+import edu.ict.ex.vo.DeptVO;
 import edu.ict.ex.vo.EmpVO;
 import lombok.extern.slf4j.Slf4j;
 
@@ -33,7 +34,9 @@ public class EmpController {
       
       return "emp/list";
    }
+   
 
+   
    @GetMapping("/insert_view")
    public String insert_view(Model model) {
       System.out.println("insert_view()..");
@@ -91,16 +94,6 @@ public class EmpController {
       
       return "emp/list5";
    }
-   
-	@GetMapping("/list6")
-	public String list6(Model model) {
-
-		System.out.println("list6()..");
-
-		model.addAttribute("empList", empService.getEmpSalGradeList());
-
-		return "emp/list6";
-	}
    
    @GetMapping("/list7")
    public String list7(Model model) {

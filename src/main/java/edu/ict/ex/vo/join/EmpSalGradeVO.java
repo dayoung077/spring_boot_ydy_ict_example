@@ -1,6 +1,8 @@
 package edu.ict.ex.vo.join;
 
-import edu.ict.ex.vo.EmpVO;
+import java.sql.Date;
+
+import edu.ict.ex.vo.DeptVO;
 import edu.ict.ex.vo.SalGradeVO;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -15,7 +17,17 @@ import lombok.ToString;
 @ToString
 public class EmpSalGradeVO {
 
-	private EmpVO emp;
-	   private SalGradeVO salgrade;
-
+   private int empno;
+   private String ename;
+   private String job;
+   private int mgr;
+   private Date hiredate;
+   private int sal;
+   private int comm;
+   private int deptno;
+   
+   //1대1
+   private SalGradeVO salgrade; 
+   
+   private DeptVO dept;
 }

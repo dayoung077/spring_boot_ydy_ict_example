@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import edu.ict.ex.service.EmpService;
 
 @Controller
+
 public class ShopController {
 
    @Autowired

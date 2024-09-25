@@ -11,15 +11,16 @@ import edu.ict.ex.service.DeptService;
 @Controller
 @RequestMapping("/dept")
 public class DeptController {
-
-	@Autowired
-	private DeptService deptService;
-
-	@GetMapping("/list")
-	public String list(Model model) {
-		System.out.println("list()..");
-		model.addAttribute("deptList", deptService.getList());
-		return "dept/list";
-	}
-
+   @Autowired
+   private DeptService deptService;
+   
+   @GetMapping("/list")
+   public String list(Model model) {
+      System.out.println("list()..");
+      
+      model.addAttribute("deptList", deptService.getList());
+      
+      return "dept/list";
+   }
+   
 }

@@ -7,7 +7,7 @@
 <title>게시판 리스트</title>
 </head>
 <body>
-   <h1>게시판 리스트</h1>
+   <h1>페이징 리스트</h1>
    <table width="500" cellpadding="0" cellspacing="0"  border="1">
       <tr>
          <td>번호</td>
@@ -23,7 +23,7 @@
             <td>
                <c:forEach begin="1" end="${board.bindent}">[Re]</c:forEach>
                <a href="${pageContext.request.contextPath}/board/content_view?bid=${board.bid}">${board.btitle}</a>
-            </td>
+            </td>        <!-- 위에 contextPath는 프로젝트명 집어넣는거 -->
             <td>${board.bdate}</td>
             <td>${board.bhit}</td>         
          </tr>
@@ -33,7 +33,6 @@
       </tr>      
    </table>
    
-   <!-- 페이징 -->
    <c:if test="${pageMaker.prev}">
       <a href="list2${pageMaker.makeQuery(pageMaker.startPage - 1) }"> << </a>
    </c:if>
@@ -42,9 +41,11 @@
       <a href="list2${pageMaker.makeQuery(idx)}">${idx}</a>
    </c:forEach>
    
+   
    <c:if test="${pageMaker.next && pageMaker.endPage > 0}">
       <a href="list2${pageMaker.makeQuery(pageMaker.endPage + 1) }"> >> </a>
    </c:if>
+   
    
 </body>
 </html>

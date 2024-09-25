@@ -23,12 +23,11 @@
             <td>
                <c:forEach begin="1" end="${board.bindent}">[Re]</c:forEach>
                <a href="${pageContext.request.contextPath}/board/content_view?bid=${board.bid}">${board.btitle}</a>
-            </td>
+            </td>        <!-- 위에 contextPath는 프로젝트명 집어넣는거 -->
             <td>${board.bdate}</td>
             <td>${board.bhit}</td>         
          </tr>
       </c:forEach>
-      
       <tr>
          <td colspan="5"><a href="${pageContext.request.contextPath}/board/write_view">글작성</a></td>
       </tr>      

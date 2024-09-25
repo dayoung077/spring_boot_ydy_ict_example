@@ -14,11 +14,11 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString
 public class DeptEmpVO {
-	private int deptno;
-	private String dname;
-	private String loc;
-	
-	private List<EmpVO> empList; //1대 다
-	
+   private int deptno;
+   private String dname;
+   private String loc;
+   
+   private List<EmpVO> empList; //1대 다
+   
 
 }
