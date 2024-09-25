@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-   pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
@@ -7,8 +7,8 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script
-   src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="${pageContext.request.contextPath}/js/board.js"></script>
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="${pageContext.request.contextPath}/js/emp.js"></script>
 
 <script type="text/javascript">
 $(document).ready(function(){
@@ -24,12 +24,15 @@ $(document).ready(function(){
    
 
    $("<tr>" , {
-      html : "<td>" + "번호" + "</td>"+  // 컬럼명들
-            "<td>" + "이름" + "</td>"+
-            "<td>" + "제목" + "</td>"+
-            "<td>" + "날짜" + "</td>"+            
-            "<td>" + "히트" + "</td>"+
-            "<td>" + "삭제" + "</td>"
+      html : 
+    	    "<th>" + "EMPNO" + "</th>" +  // 컬럼명들
+            "<th>" + "ENAME" + "</th>" +
+            "<th>" + "JOB" + "</th>" +
+            "<th>" + "MGR" + "</th>" +            
+            "<th>" + "HIREDATE" + "</th>" +
+            "<th>" + "SAL" + "</th>" +
+            "<th>" + "COMM" + "</th>" +
+            "<th>" + "DEPTNO" + "</th>" 
    }).appendTo("#list-table") // 이것을 테이블에 붙임
    
    if(result.length <1){
@@ -38,17 +41,18 @@ $(document).ready(function(){
       
       $(result).each(function(){
          htmls += '<tr>';
-         htmls += '<td>'+ this.bid + '</td>'; 
-         htmls += '<td>'+ this.bname + '</td>';
-            htmls += '<td>'
-         for(let i=0;i< this.bindent;i++){
-            htmls += '-'
-         }
-            htmls += '<a href="/rest_content_view.html?bid=' + this.bid + '">' + this.btitle + '</a></td>';
-         htmls += '<td>'+ this.bdate + '</td>'; 
-         htmls += '<td>'+ this.bhit + '</td>';
-            htmls += '<td>'+ '<input id=' + this.bid + " type='button' class='btn_delete' value='삭제'>" + '</td>';
-            htmls += '</tr>';         
+         
+         htmls += '<td>' + this.empno + '</td>'; 
+         htmls += '<td>' + this.ename + '</td>';
+         htmls += '<td>' + this.job + '</td>';
+         htmls += '<td>' + this.mgr + '</td>';
+         htmls += '<td>' + this.hiredate + '</td>';
+         htmls += '<td>' + this.sal + '</td>';
+         htmls += '<td>' + this.comm + '</td>';
+         htmls += '<td>' + this.deptno + '</td>';
+         
+         htmls += '<td>' + '<input id=' + this.empno + " type='button' class='btn_delete' value='삭제'>" + '</td>';
+         htmls += '</tr>';         
          
       }); //each end
       
@@ -66,8 +70,6 @@ $(document).ready(function(){
    
 });
 </script>
-
-
 
 
 <script type="text/javascript">
@@ -88,11 +90,11 @@ $(document).ready(function(){
 
 </head>
 <body>
-   <h1>Restful 게시판 리스트</h1>
+	<h1>Restful 게시판 리스트</h1>
 
-   <table id="list-table" width="500" cellpadding="0" cellspacing="0"
-      border="1">
-   </table>
+	<table id="list-table" width="500" cellpadding="0" cellspacing="0"
+		border="1">
+	</table>
 
 
 
