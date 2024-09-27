@@ -3,6 +3,7 @@ package edu.ict.ex.mapper;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -38,12 +39,13 @@ class UserMapperTest {
 	@Autowired
 	private PasswordEncoder passwordEncoder;
 
+	// @Disabled
 	@Test
 	void testInsertUser() {
 
 		UserVO user = new UserVO();
-		user.setUsername("admin2");
-		user.setPassword(passwordEncoder.encode("admin2"));
+		user.setUsername("user2");
+		user.setPassword(passwordEncoder.encode("user2"));
 		user.setEnabled("1");
 
 		userMapper.insertUser(user);
