@@ -1,7 +1,5 @@
 package edu.ict.ex.vo;
 
-import java.util.List;
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -21,12 +19,7 @@ ENABLED           CHAR(1)
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class UserVO {
-	private String username;
-	private String password;
-	private String enabled;
-
-	private String email = "abcd@daum.net";
-
-	private List<AuthVO> authList;
+public class CartVO {
+	   private String product = "사이다";
+	   private int count = 5;
 }
