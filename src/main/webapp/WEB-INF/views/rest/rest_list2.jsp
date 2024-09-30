@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,7 +22,6 @@ $(document).ready(function(){
    let htmls="";
    
    $("#list-table").html('');
-   
 
    $("<tr>" , {
       html : 
@@ -54,7 +54,7 @@ $(document).ready(function(){
          htmls += '<td>' + '<input id=' + this.empno + " type='button' class='btn_delete' value='삭제'>" + '</td>';
          htmls += '</tr>';         
          
-      }); //each end
+      }); // each end
       
        htmls+='<tr>';
        htmls+='<td colspan="5"> <a href="/write_view">글작성</a> </td>';                         
@@ -87,16 +87,13 @@ $(document).ready(function(){
    
 });
 </script>
-
 </head>
+
 <body>
 	<h1>Restful 게시판 리스트</h1>
 
 	<table id="list-table" width="500" cellpadding="0" cellspacing="0"
 		border="1">
 	</table>
-
-
-
 </body>
 </html>
